@@ -112,8 +112,8 @@
 ; move paddle based on key inputs
 (define (move-paddle g ke)
   (cond
-    [(string=? "up" ke) (make-game (game-ball g) (- (game-score g) PADDLE-SPEED) (game-score g))]
-    [(string=? "down" ke) (make-game (game-ball g) (+ (game-score g) PADDLE-SPEED) (game-score g))]
+    [(string=? "up" ke) (make-game (game-ball g) (- (game-paddle g) PADDLE-SPEED) (game-score g))]
+    [(string=? "down" ke) (make-game (game-ball g) (+ (game-paddle g) PADDLE-SPEED) (game-score g))]
     [else g]))
 
 
