@@ -6,6 +6,7 @@
 ;; 2. HIT-RANGE adjustment.. debug
 ;; 3. Increments the velocity whenever it hits...
 ;; 4. nothing goes out of bound
+;; 5. show score tab
 
 
 
