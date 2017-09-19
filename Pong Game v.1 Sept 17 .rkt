@@ -24,10 +24,11 @@
 (define PADDLE (rectangle 3 20 "solid" "red"))
 (define PADDLE-X 390)
 (define HIT-RANGE 11)
-(define (score-box score)
+(define (SCORE-BOX score)
   (overlay
    (text (number->string score) 20 "black")
    (rectangle 40 25 "solid" "grey")))
+(define SCORE-POSITION (make-posn 50 50))
 
 (define-struct vel [dx dy])
 (define-struct ball [loc vel])
@@ -53,8 +54,8 @@
 
 (define (draw-game g)
   (place-images
-   (list BALL PADDLE)
-   (list (ball-loc (game-ball g)) (make-posn PADDLE-X (game-paddle g)))
+   (list BALL PADDLE SCORE-BOX)
+   (list (ball-loc (game-ball g)) (make-posn PADDLE-X (game-paddle g)) SCORE-POSITION)
    SCENE))
 
 ;update-game :game -> game
