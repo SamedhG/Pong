@@ -10,9 +10,6 @@
 ;; 6. Semi-circle Paddle Model, functions
 ;; 7. boolean function? -->> disable ke when at top/bottom rationalized position
 ;; 8. error handlings.
-;; 9. score is set to paddle position
-
-
 
 ;; 5. score //FINISHED
 
