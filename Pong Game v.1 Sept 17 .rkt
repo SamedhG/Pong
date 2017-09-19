@@ -24,7 +24,10 @@
 (define PADDLE (rectangle 3 20 "solid" "red"))
 (define PADDLE-X 390)
 (define HIT-RANGE 11)
-
+(define (score-box score)
+  (overlay
+   (text (number->string score) 20 "black")
+   (rectangle 40 25 "solid" "grey")))
 
 (define-struct vel [dx dy])
 (define-struct ball [loc vel])
