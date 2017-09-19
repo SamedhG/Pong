@@ -130,8 +130,8 @@
 ;update-score game->score
 (define (update-score g)
   (if (hit-paddle? (game-ball g) (game-paddle g))
-      (+ 1 (game-paddle g))
-      (game-paddle g)))
+      (+ 1 (game-score g))
+      (game-score g)))
 
 
 ; game keyevent -> game
