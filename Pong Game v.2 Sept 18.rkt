@@ -10,6 +10,9 @@
 ;; 6. Semi-circle Paddle Model, functions
 ;; 7. boolean function? -->> disable ke when at top/bottom rationalized position
 ;; 8. error handlings.
+;; 9. score is set to paddle position
+
+
 
 ;; 5. score //FINISHED
 
@@ -31,13 +34,13 @@
 (define PADDLE-WIDTH 3)
 (define PADDLE-HEIGHT 20)
 (define PADDLE (rectangle PADDLE-WIDTH PADDLE-HEIGHT "solid" "red"))
-(define PADDLE-X 390)
+(define PADDLE-X 397)
 
 (define HIT-RANGE-PARA 0)
 (define HIT-RANGE-X (+ HIT-RANGE-PARA BALL-RADIUS (/ PADDLE-WIDTH 2)))
 (define HIT-RANGE-Y (+ BALL-RADIUS (/ PADDLE-HEIGHT 2)))
 
-(define DIFFICULTY 1.1)
+(define DIFFICULTY 1)
 
 (define (SCORE-BOX score)
   (overlay
@@ -47,7 +50,7 @@
 
 (define-struct vel [dx dy])
 (define-struct ball [loc vel])
-;; loc is a (make-posn NNN NN)
+;; loc is a (make-posn NNN NNN)
 ;; NNN is a non-negative number
 
 (define-struct game [ball paddle score])
@@ -153,4 +156,4 @@
 (define (out-of-bound? g)
   (if (>= SCENE-WIDTH (posn-x (ball-loc (game-ball g)))) #false #true))
 
-(main (make-game (make-ball (make-posn PONG-INITX PONG-INITY) (make-vel -0.7 0.7)) 190 0))
+(main (make-game (make-ball (make-posn PONG-INITX PONG-INITY) (make-vel -1 1)) 190 0))
